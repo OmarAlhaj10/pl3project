@@ -1,12 +1,10 @@
-# pl3project
+#Quiz Application
 
-Quiz Application
-
-Overview
+#Overview
 
 The Quiz Application is a program that allows users to take a quiz, answer questions, and receive scores based on their performance. The application supports multiple-choice and written-answer questions, provides real-time score tracking, and displays results at the end of the quiz.
 
-Features
+#Features
 
 Create quizzes with:
 
@@ -20,7 +18,7 @@ Calculate and track scores as users answer questions.
 
 Display the final results upon quiz completion.
 
-Technical Details
+#Technical Details
 
 Data Structure:
 
@@ -34,7 +32,7 @@ User Interface:
 
 Built using Windows Forms to provide an interactive and user-friendly experience for quiz participants.
 
-How It Works
+#How It Works
 
 Question Creation: Define a list of questions, including their type (multiple-choice or written) and correct answers.
 
@@ -46,7 +44,7 @@ Score Calculation: Compare user responses with correct answers and update the sc
 
 Results Display: Show the final score and a summary of correct and incorrect answers.
 
-Technologies Used
+#Technologies Used
 
 Programming Language: F#
 
