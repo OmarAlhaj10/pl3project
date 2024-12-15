@@ -47,3 +47,33 @@ let updateQuestion () =
             | Some q when q.CorrectAnswer = answer -> score + 1
             | _ -> score
         ) 0
+
+
+
+let showResults () =
+        let score = calculateScore ()
+        MessageBox.Show(sprintf "Your score: %d / %d" score quiz.Count, "Quiz Finished") |> ignore
+        form.Close()
+
+    nextButton.Click.Add(fun _ ->
+        if currentQuestion < quiz.Count then
+            currentQuestion <- currentQuestion + 1
+            updateQuestion ()
+            if currentQuestion = quiz.Count then finishButton.Enabled <- true
+        else
+            nextButton.Enabled <- false
+    )
+
+    finishButton.Click.Add(fun _ ->
+        showResults ()
+    )
+
+    updateQuestion ()
+    form
+
+[<STAThread>]
+[<EntryPoint>]
+let main _ =
+    let quiz = QuizData.sampleQuiz
+    Application.Run(createQuizForm quiz)
+    0
