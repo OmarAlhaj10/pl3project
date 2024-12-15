@@ -39,3 +39,11 @@ let updateQuestion () =
                 )
                 answerPanel.Controls.Add(textBox)
         | None -> ()
+
+        let calculateScore () =
+        userAnswers
+        |> Map.fold (fun score questionId answer ->
+            match quiz.TryFind questionId with
+            | Some q when q.CorrectAnswer = answer -> score + 1
+            | _ -> score
+        ) 0
